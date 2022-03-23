@@ -17641,17 +17641,38 @@ by R. Vogg  15.March.2002</description>
 </library>
 <library name="Custom_Pots">
 <packages>
-<package name="RV16AF-41">
-<circle x="0" y="0" radius="8.25" width="0.2" layer="21"/>
-<pad name="1" x="-5" y="-16" drill="1.2"/>
-<pad name="2" x="0" y="-16" drill="1.2"/>
-<pad name="3" x="5" y="-16" drill="1.2"/>
-<wire x1="-6.5" y1="-14.5" x2="6.5" y2="-14.5" width="0.2" layer="21"/>
-<wire x1="6.5" y1="-14.5" x2="6.5" y2="-17.5" width="0.2" layer="21"/>
-<wire x1="6.5" y1="-17.5" x2="-6.5" y2="-17.5" width="0.2" layer="21"/>
-<wire x1="-6.5" y1="-17.5" x2="-6.5" y2="-14.5" width="0.2" layer="21"/>
-<text x="-6.35" y="-10.16" size="1.778" layer="25">&gt;NAME</text>
-<text x="-6.35" y="-12.7" size="1.778" layer="27">&gt;VALUE</text>
+<package name="MA03-1" urn="urn:adsk.eagle:footprint:8281/1" locally_modified="yes">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-3.175" y1="1.27" x2="-1.905" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-0.635" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="0.635" x2="-0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="-1.27" x2="-1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="0.635" x2="-3.81" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-3.175" y1="1.27" x2="-3.81" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="-0.635" x2="-3.175" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="-1.27" x2="-3.175" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="0.635" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="1.27" x2="3.175" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="3.175" y1="1.27" x2="3.81" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="-0.635" x2="3.175" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="3.175" y1="-1.27" x2="1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="-1.27" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="0.635" x2="3.81" y2="-0.635" width="0.1524" layer="21"/>
+<pad name="L" x="-2.54" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="M" x="0" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="R" x="2.54" y="0" drill="1.016" shape="long" rot="R90"/>
+<text x="-3.81" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-5.08" y="-0.635" size="1.27" layer="21" ratio="10">L</text>
+<text x="-3.81" y="-2.921" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+<rectangle x1="-2.794" y1="-0.254" x2="-2.286" y2="0.254" layer="51"/>
+<rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="51"/>
+<text x="4.58" y="-0.635" size="1.27" layer="21" ratio="10">R</text>
 </package>
 </packages>
 <symbols>
@@ -17675,24 +17696,20 @@ by R. Vogg  15.March.2002</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="RV16AF-41-17K-A100K-3" prefix="POT">
-<description>A 100K ø16mm 20% carbon track single potentiometer suitable for PCB mounting in commercial applications</description>
+<deviceset name="WIRED_POT" prefix="POT">
+<description>Pot with header terminals for wiring to PCB</description>
 <gates>
 <gate name="G$1" symbol="POTEURO" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="RV16AF-41">
+<device name="" package="MA03-1">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="3"/>
-<connect gate="G$1" pin="3" pad="2"/>
+<connect gate="G$1" pin="1" pad="L"/>
+<connect gate="G$1" pin="2" pad="R"/>
+<connect gate="G$1" pin="3" pad="M"/>
 </connects>
 <technologies>
-<technology name="">
-<attribute name="MF" value="Taiwan Alpha" constant="no"/>
-<attribute name="MPN" value="RV16AF-41-17K-A100K-3" constant="no"/>
-<attribute name="OC_RAPID" value="65-3611" constant="no"/>
-</technology>
+<technology name=""/>
 </technologies>
 </device>
 </devices>
@@ -18040,23 +18057,18 @@ by R. Vogg  15.March.2002</description>
 <attribute name="OC_MOUSER" value="80-C315C300J3G5TA"/>
 <attribute name="OC_RAPID" value=""/>
 </part>
-<part name="JP3" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="JP1E" device="" package3d_urn="urn:adsk.eagle:package:15455/1"/>
-<part name="JP4" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="JP1E" device="" package3d_urn="urn:adsk.eagle:package:15455/1"/>
-<part name="JP5" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="JP1E" device="" package3d_urn="urn:adsk.eagle:package:15455/1"/>
-<part name="JP6" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="JP1E" device="" package3d_urn="urn:adsk.eagle:package:15455/1"/>
 <part name="JP7" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="JP1E" device="" package3d_urn="urn:adsk.eagle:package:15455/1"/>
 <part name="JP8" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="JP1E" device="" package3d_urn="urn:adsk.eagle:package:15455/1"/>
 <part name="JP9" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="JP1E" device="" package3d_urn="urn:adsk.eagle:package:15455/1"/>
 <part name="JP10" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="JP1E" device="" package3d_urn="urn:adsk.eagle:package:15455/1"/>
-<part name="JP11" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="JP1E" device="" package3d_urn="urn:adsk.eagle:package:15455/1"/>
-<part name="POT1" library="Custom_Pots" deviceset="RV16AF-41-17K-A100K-3" device=""/>
-<part name="POT2" library="Custom_Pots" deviceset="RV16AF-41-17K-A100K-3" device=""/>
-<part name="POT3" library="Custom_Pots" deviceset="RV16AF-41-17K-A100K-3" device=""/>
 <part name="JP12" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2">
 <attribute name="MF" value="TruConnect"/>
 <attribute name="MPN" value="20-0134"/>
 <attribute name="OC_RAPID" value="20-0134"/>
 </part>
+<part name="POT1" library="Custom_Pots" deviceset="WIRED_POT" device="" value="100K"/>
+<part name="POT2" library="Custom_Pots" deviceset="WIRED_POT" device="" value="100K"/>
+<part name="POT3" library="Custom_Pots" deviceset="WIRED_POT" device="" value="100K"/>
 </parts>
 <sheets>
 <sheet>
@@ -18351,22 +18363,6 @@ by R. Vogg  15.March.2002</description>
 <attribute name="OC_RAPID" x="157.48" y="165.1" size="1.778" layer="96" rot="R90" display="off"/>
 <attribute name="OC_MOUSER" x="157.48" y="165.1" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="JP3" gate="A" x="88.9" y="256.54" smashed="yes">
-<attribute name="NAME" x="87.63" y="256.54" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="94.615" y="256.54" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="JP4" gate="A" x="109.22" y="256.54" smashed="yes">
-<attribute name="NAME" x="107.95" y="256.54" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="114.935" y="256.54" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="JP5" gate="A" x="91.44" y="203.2" smashed="yes" rot="R180">
-<attribute name="NAME" x="92.71" y="203.2" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="85.725" y="203.2" size="1.778" layer="96" rot="R270"/>
-</instance>
-<instance part="JP6" gate="A" x="111.76" y="203.2" smashed="yes" rot="R180">
-<attribute name="NAME" x="113.03" y="203.2" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="106.045" y="203.2" size="1.778" layer="96" rot="R270"/>
-</instance>
 <instance part="JP7" gate="A" x="215.9" y="137.16" smashed="yes" rot="MR270">
 <attribute name="NAME" x="215.9" y="138.43" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="215.9" y="131.445" size="1.778" layer="96" rot="MR0"/>
@@ -18383,9 +18379,12 @@ by R. Vogg  15.March.2002</description>
 <attribute name="NAME" x="287.02" y="133.35" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="287.02" y="140.335" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="JP11" gate="A" x="149.86" y="203.2" smashed="yes">
-<attribute name="NAME" x="148.59" y="203.2" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="155.575" y="203.2" size="1.778" layer="96" rot="R90"/>
+<instance part="JP12" gate="G$1" x="58.42" y="66.04" smashed="yes" rot="MR0">
+<attribute name="NAME" x="64.77" y="71.755" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="64.77" y="60.96" size="1.778" layer="96" rot="MR0"/>
+<attribute name="MF" x="58.42" y="66.04" size="1.778" layer="96" rot="MR0" display="off"/>
+<attribute name="MPN" x="58.42" y="66.04" size="1.778" layer="96" rot="MR0" display="off"/>
+<attribute name="OC_RAPID" x="58.42" y="66.04" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
 <instance part="POT1" gate="G$1" x="149.86" y="238.76" smashed="yes" rot="R180">
 <attribute name="NAME" x="147.32" y="243.84" size="1.778" layer="95" rot="R180"/>
@@ -18398,13 +18397,6 @@ by R. Vogg  15.March.2002</description>
 <instance part="POT3" gate="G$1" x="393.7" y="142.24" smashed="yes" rot="R90">
 <attribute name="NAME" x="398.78" y="144.78" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="401.32" y="144.78" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="JP12" gate="G$1" x="58.42" y="66.04" smashed="yes" rot="MR0">
-<attribute name="NAME" x="64.77" y="71.755" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="64.77" y="60.96" size="1.778" layer="96" rot="MR0"/>
-<attribute name="MF" x="58.42" y="66.04" size="1.778" layer="96" rot="MR0" display="off"/>
-<attribute name="MPN" x="58.42" y="66.04" size="1.778" layer="96" rot="MR0" display="off"/>
-<attribute name="OC_RAPID" x="58.42" y="66.04" size="1.778" layer="96" rot="MR0" display="off"/>
 </instance>
 </instances>
 <busses>
@@ -18456,25 +18448,13 @@ by R. Vogg  15.March.2002</description>
 </segment>
 <segment>
 <pinref part="C4" gate="G$1" pin="-"/>
-<wire x1="86.36" y1="238.76" x2="83.82" y2="238.76" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="238.76" x2="76.2" y2="238.76" width="0.1524" layer="91"/>
+<wire x1="86.36" y1="238.76" x2="76.2" y2="238.76" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="238.76" x2="76.2" y2="223.52" width="0.1524" layer="91"/>
 <pinref part="C5" gate="G$1" pin="-"/>
-<wire x1="76.2" y1="223.52" x2="83.82" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="223.52" x2="86.36" y2="223.52" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
-<wire x1="83.82" y1="223.52" x2="86.36" y2="223.52" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="215.9" x2="76.2" y2="223.52" width="0.1524" layer="91"/>
 <junction x="76.2" y="223.52"/>
-<wire x1="88.9" y1="254" x2="88.9" y2="251.46" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="251.46" x2="83.82" y2="251.46" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="251.46" x2="83.82" y2="238.76" width="0.1524" layer="91"/>
-<junction x="83.82" y="238.76"/>
-<wire x1="88.9" y1="205.74" x2="88.9" y2="208.28" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="208.28" x2="83.82" y2="208.28" width="0.1524" layer="91"/>
-<wire x1="83.82" y1="208.28" x2="83.82" y2="223.52" width="0.1524" layer="91"/>
-<junction x="83.82" y="223.52"/>
-<pinref part="JP3" gate="A" pin="1"/>
-<pinref part="JP5" gate="A" pin="2"/>
 </segment>
 <segment>
 <pinref part="C6" gate="G$1" pin="1"/>
@@ -18595,36 +18575,24 @@ by R. Vogg  15.March.2002</description>
 <pinref part="IC1" gate="A" pin="OUT"/>
 <wire x1="157.48" y1="149.86" x2="172.72" y2="149.86" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="149.86" x2="172.72" y2="185.42" width="0.1524" layer="91"/>
-<wire x1="172.72" y1="185.42" x2="157.48" y2="185.42" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="185.42" x2="154.94" y2="185.42" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="+"/>
-<wire x1="157.48" y1="185.42" x2="154.94" y2="185.42" width="0.1524" layer="91"/>
 <wire x1="177.8" y1="149.86" x2="172.72" y2="149.86" width="0.1524" layer="91"/>
 <junction x="172.72" y="149.86"/>
 <wire x1="172.72" y1="185.42" x2="172.72" y2="238.76" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="238.76" x2="154.94" y2="238.76" width="0.1524" layer="91"/>
 <junction x="172.72" y="185.42"/>
 <pinref part="C2" gate="G$1" pin="2"/>
-<wire x1="152.4" y1="200.66" x2="152.4" y2="198.12" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="198.12" x2="157.48" y2="198.12" width="0.1524" layer="91"/>
-<wire x1="157.48" y1="198.12" x2="157.48" y2="185.42" width="0.1524" layer="91"/>
-<junction x="157.48" y="185.42"/>
-<pinref part="JP11" gate="A" pin="2"/>
 <pinref part="POT1" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$5" class="0">
 <segment>
-<wire x1="147.32" y1="185.42" x2="142.24" y2="185.42" width="0.1524" layer="91"/>
-<wire x1="142.24" y1="185.42" x2="127" y2="185.42" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="185.42" x2="127" y2="185.42" width="0.1524" layer="91"/>
 <wire x1="127" y1="185.42" x2="127" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="A" pin="-IN"/>
 <wire x1="127" y1="152.4" x2="142.24" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="149.86" y1="200.66" x2="149.86" y2="198.12" width="0.1524" layer="91"/>
-<wire x1="149.86" y1="198.12" x2="142.24" y2="198.12" width="0.1524" layer="91"/>
-<wire x1="142.24" y1="198.12" x2="142.24" y2="185.42" width="0.1524" layer="91"/>
-<junction x="142.24" y="185.42"/>
-<pinref part="JP11" gate="A" pin="1"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -18669,28 +18637,16 @@ by R. Vogg  15.March.2002</description>
 <segment>
 <wire x1="144.78" y1="238.76" x2="139.7" y2="238.76" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="238.76" x2="127" y2="238.76" width="0.1524" layer="91"/>
-<wire x1="127" y1="238.76" x2="119.38" y2="238.76" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="238.76" x2="116.84" y2="238.76" width="0.1524" layer="91"/>
+<wire x1="127" y1="238.76" x2="116.84" y2="238.76" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="243.84" x2="149.86" y2="248.92" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="248.92" x2="139.7" y2="248.92" width="0.1524" layer="91"/>
 <wire x1="139.7" y1="248.92" x2="139.7" y2="238.76" width="0.1524" layer="91"/>
 <junction x="139.7" y="238.76"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="116.84" y1="223.52" x2="119.38" y2="223.52" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="223.52" x2="127" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="223.52" x2="127" y2="223.52" width="0.1524" layer="91"/>
 <wire x1="127" y1="223.52" x2="127" y2="238.76" width="0.1524" layer="91"/>
 <junction x="127" y="238.76"/>
-<wire x1="111.76" y1="254" x2="111.76" y2="251.46" width="0.1524" layer="91"/>
-<wire x1="111.76" y1="251.46" x2="119.38" y2="251.46" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="251.46" x2="119.38" y2="238.76" width="0.1524" layer="91"/>
-<junction x="119.38" y="238.76"/>
-<wire x1="111.76" y1="205.74" x2="111.76" y2="208.28" width="0.1524" layer="91"/>
-<wire x1="111.76" y1="208.28" x2="119.38" y2="208.28" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="208.28" x2="119.38" y2="223.52" width="0.1524" layer="91"/>
-<junction x="119.38" y="223.52"/>
-<pinref part="JP4" gate="A" pin="2"/>
-<pinref part="JP6" gate="A" pin="1"/>
 <pinref part="POT1" gate="G$1" pin="2"/>
 <pinref part="POT1" gate="G$1" pin="3"/>
 </segment>
@@ -18699,19 +18655,7 @@ by R. Vogg  15.March.2002</description>
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
 <pinref part="C5" gate="G$1" pin="+"/>
-<wire x1="106.68" y1="223.52" x2="101.6" y2="223.52" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="223.52" x2="96.52" y2="223.52" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="223.52" x2="93.98" y2="223.52" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="205.74" x2="91.44" y2="208.28" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="208.28" x2="96.52" y2="208.28" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="208.28" x2="96.52" y2="223.52" width="0.1524" layer="91"/>
-<junction x="96.52" y="223.52"/>
-<wire x1="109.22" y1="205.74" x2="109.22" y2="208.28" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="208.28" x2="101.6" y2="208.28" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="208.28" x2="101.6" y2="223.52" width="0.1524" layer="91"/>
-<junction x="101.6" y="223.52"/>
-<pinref part="JP5" gate="A" pin="1"/>
-<pinref part="JP6" gate="A" pin="2"/>
+<wire x1="106.68" y1="223.52" x2="93.98" y2="223.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$12" class="0">
@@ -18852,21 +18796,9 @@ by R. Vogg  15.March.2002</description>
 </net>
 <net name="N$21" class="0">
 <segment>
-<wire x1="109.22" y1="254" x2="109.22" y2="251.46" width="0.1524" layer="91"/>
-<wire x1="109.22" y1="251.46" x2="101.6" y2="251.46" width="0.1524" layer="91"/>
 <pinref part="C4" gate="G$1" pin="+"/>
 <pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="93.98" y1="238.76" x2="96.52" y2="238.76" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="238.76" x2="101.6" y2="238.76" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="238.76" x2="106.68" y2="238.76" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="254" x2="91.44" y2="251.46" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="251.46" x2="96.52" y2="251.46" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="251.46" x2="96.52" y2="238.76" width="0.1524" layer="91"/>
-<junction x="96.52" y="238.76"/>
-<wire x1="101.6" y1="251.46" x2="101.6" y2="238.76" width="0.1524" layer="91"/>
-<junction x="101.6" y="238.76"/>
-<pinref part="JP3" gate="A" pin="2"/>
-<pinref part="JP4" gate="A" pin="1"/>
+<wire x1="93.98" y1="238.76" x2="106.68" y2="238.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
